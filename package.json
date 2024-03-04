@@ -1,12 +1,12 @@
 {
-  "name": "crc64-ecma182.js",
-  "version": "2.0.2",
+  "name": "tos-crc64-js",
+  "version": "0.0.1-alpha.2",
   "description": "Pure JavaScript implement of CRC64-ECMA182 for Node.js.",
   "main": "crc64_ecma182.js",
   "scripts": {
     "eslint": "eslint .",
     "postinstall": "node scripts/postinstall.js",
-    "prepublishOnly": "mkdir -p dist && make js",
+    "prepublishOnly": "mkdir -p dist && make js && node ./scripts/transform.js",
     "test": "make test"
   },
   "repository": {
@@ -24,6 +24,10 @@
   },
   "homepage": "https://github.com/XadillaX/crc64-ecma182.js#readme",
   "devDependencies": {
+    "@babel/cli": "^7.23.9",
+    "@babel/core": "^7.24.0",
+    "@babel/plugin-transform-logical-assignment-operators": "^7.23.4",
+    "@babel/plugin-transform-optional-chaining": "^7.23.4",
     "@types/node": "^20.4.9",
     "eslint": "^8.46.0",
     "eslint-config-egg": "^12.2.1",
