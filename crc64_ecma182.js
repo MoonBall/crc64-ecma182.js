@@ -31,10 +31,10 @@ function uint64PtrToStr(uint64Ptr) {
   return str;
 }
 
+function isBuffer(v) { return typeof Buffer !== 'undefined' && Buffer.isBuffer(v); }
+
 function buffToPtr(buff) {
-  if (typeof buff === 'string') {
-    buff = Buffer.from(buff);
-  } else if (!Buffer.isBuffer(buff)) {
+  if (!isBuffer(buff)) {
     throw new Error('Invalid buffer type.');
   }
 
