@@ -1,6 +1,6 @@
 {
   "name": "tos-crc64-js",
-  "version": "0.0.1-alpha.2",
+  "version": "0.0.1-alpha.3",
   "description": "Pure JavaScript implement of CRC64-ECMA182 for Node.js.",
   "main": "crc64_ecma182.js",
   "scripts": {
@@ -11,18 +11,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/souche-koumakan/crc64-ecma182.js.git"
+    "url": "git+https://github.com/MoonBall/crc64-ecma182.js.git"
   },
   "keywords": [
     "crc64",
     "crc64-ecma182"
   ],
-  "author": "XadillaX <i@2333.moe>",
+  "author": "MoonBall <gangc.cxy@foxmail.moe>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/XadillaX/crc64-ecma182.js/issues"
+    "url": "https://github.com/MoonBall/crc64-ecma182.js/issues"
   },
-  "homepage": "https://github.com/XadillaX/crc64-ecma182.js#readme",
+  "homepage": "https://github.com/MoonBall/crc64-ecma182.js#readme",
   "devDependencies": {
     "@babel/cli": "^7.23.9",
     "@babel/core": "^7.24.0",
@@ -40,7 +40,7 @@
     "dist",
     "crc64_ecma182.js",
     "crc64_ecma182.d.ts",
-    "scripts/postinstall.js"
+    "scripts"
   ],
   "types": "crc64_ecma182.d.ts"
 }
