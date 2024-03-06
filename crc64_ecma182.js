@@ -6,6 +6,7 @@ const binding = require('./dist/crc');
 
 const raw = {
   crc64: binding._crc64,
+  combineCrc64: binding._combine_crc64,
   strToUint64Ptr: binding._str_to_uint64,
   uint64PtrToStr: binding._uint64_to_str,
 };
@@ -60,6 +61,31 @@ module.exports.crc64 = function(buff, prev) {
   binding._free(buffPtr);
 
   return ret;
+};
+
+/**
+ * Calculate the CRC-64 of two sequential blocks
+ * @param {string} crc1 the CRC-64 of the first block
+ * @param {string} crc2 crc2 is the CRC-64 of the second block
+ * @param {number} crc2BytesLen the length of the second block
+ * @returns {string} the CRC-64 of two sequential blocks
+ */
+module.exports.combineCrc64 = function(crc1, crc2, crc2BytesLen) {
+  if (
+    typeof crc1 !== 'string' || !/\d+/.test(crc1) ||
+    typeof crc2 !== 'string' || !/\d+/.test(crc2)
+  ) {
+    throw new Error('Invlid crc1 or crc2 value.');
+  }
+  const crc1Ptr = strToUint64Ptr(crc1);
+  const crc2Ptr = strToUint64Ptr(crc2);
+  raw.combineCrc64(crc1Ptr, crc2Ptr, crc2BytesLen);
+  const retCrc = uint64PtrToStr(crc1Ptr);
+
+  binding._free(crc1Ptr);
+  binding._free(crc2Ptr);
+
+  return retCrc;
 };
 
 module.exports.crc64File = function(filename, callback) {

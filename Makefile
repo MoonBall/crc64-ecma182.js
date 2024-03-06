@@ -6,6 +6,7 @@ js: webassembly/crc64_ecma_182.cc webassembly/crc64_ecma_182.h
 		-s EXPORTED_FUNCTIONS="[\
 			'_crc64_init',\
 			'_crc64',\
+			'_combine_crc64',\
 			'_str_to_uint64',\
 			'_uint64_to_str',\
 			'_malloc',\

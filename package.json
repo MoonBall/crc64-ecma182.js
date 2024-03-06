@@ -1,12 +1,13 @@
 {
   "name": "tos-crc64-js",
-  "version": "0.0.1-alpha.4",
+  "version": "0.0.1-alpha.5",
   "description": "Pure JavaScript implement of CRC64-ECMA182 for Node.js.",
   "main": "crc64_ecma182.js",
   "scripts": {
     "eslint": "eslint .",
     "postinstall": "node scripts/postinstall.js",
-    "prepublishOnly": "mkdir -p dist && make js && node ./scripts/transform.js",
+    "build": "mkdir -p dist && make js && node ./scripts/transform.js",
+    "prepublishOnly": "npm run build",
     "test": "make test"
   },
   "repository": {

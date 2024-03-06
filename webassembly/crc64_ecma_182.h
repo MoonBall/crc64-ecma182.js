@@ -57,6 +57,7 @@ extern "C" {
 
 void crc64_init();
 void crc64(uint64_t* crc, void* buf, size_t len);
+void combine_crc64(uint64_t *crc1, uint64_t *crc2, size_t len2);
 void str_to_uint64(char* str, uint64_t* ret);
 void uint64_to_str(char* str, uint64_t* ret);
 
